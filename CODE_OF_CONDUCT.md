@@ -24,4 +24,4 @@ Everyone who takes part in Lectern's projects, issues, pull requests and discuss
 
 Maintainers may remove comments, code, issues or pull requests that break these rules, and may block people who break them repeatedly or seriously.
 
-Report problems to the maintainers privately at **conduct@lectern.example** (to be replaced by the project's contact address). Every report is reviewed, and the person reporting is protected.
+Report problems to the maintainers privately at **conduct@lecternstudy.com**. Every report is reviewed, and the person reporting is protected.
