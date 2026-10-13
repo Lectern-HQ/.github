@@ -1,6 +1,6 @@
 # Contributing to Lectern
 
-Every change follows the same path: **issue, branch, pull request, checks, review, merge.**
+Every change follows the same path: **issue, branch, pull request into `dev`, checks, review, merge.** `main` only receives tested releases from `dev`.
 
 Work is planned on the [Lectern project board](https://github.com/orgs/Lectern-HQ/projects/1) in two-week sprints. Each sprint is also a milestone (`Sprint 1`, `Sprint 2`, ...).
 
@@ -12,10 +12,10 @@ Work is planned on the [Lectern project board](https://github.com/orgs/Lectern-H
 
 ## 2. Create a branch
 
-Branch from the latest `main`, named after the issue:
+Branch from the latest `dev`, named after the issue:
 
 ```bash
-git switch main
+git switch dev
 git pull
 git switch -c 42-short-description
 ```
@@ -31,7 +31,8 @@ Never commit cookie values, cookie files, browser databases, passwords, keys, si
 ## 4. Open a pull request
 
 - One pull request per issue.
-- **Title in Conventional Commits format**: it becomes the commit message on `main`.
+- **Base branch: `dev`.** Never open a feature pull request into `main`.
+- **Title in Conventional Commits format**: it becomes the commit message on `dev`.
 - Fill in the template. The description must contain `Closes #42` (or `Closes Lectern-HQ/<repo>#42` for an issue in another repository), so the issue closes when the pull request is merged.
 - Set the issue's status to **In review**.
 
@@ -43,9 +44,17 @@ Never commit cookie values, cookie files, browser databases, passwords, keys, si
 
 ## 6. Merge
 
-- **Squash and merge** only.
+- **Squash and merge** only (into `dev`).
 - Delete the branch after merging.
 - The issue closes automatically and moves to **Done** on the board.
+
+## 7. Release to `main`
+
+When `dev` is stable (all checks pass, tried in use):
+
+1. Open a pull request from `dev` into `main`, titled for example `release: v0.2.0`, listing what changed.
+2. Merge it with **Create a merge commit**, never squash. A squash would give `main` commits that `dev` does not have, and every later release would conflict.
+3. Tag the release on `main` (`v0.2.0`). `dev` is never deleted.
 
 ## Code quality
 

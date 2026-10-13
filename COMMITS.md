@@ -61,7 +61,7 @@ fix(pipeline): fix bug             (which bug?)
 
 ## Pull requests
 
-Pull requests are squash merged, so **the pull request title becomes the commit message** on `main`. Give every pull request title the same format. The commits inside a branch can be less strict.
+Pull requests into `dev` are squash merged, so **the pull request title becomes the commit message** on `dev`. Releases from `dev` into `main` use a merge commit. Give every pull request title the same format. The commits inside a branch can be less strict.
 
 ## Project rules
 
