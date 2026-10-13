@@ -13,6 +13,8 @@ Do not open a public issue for a security problem.
    - the steps to reproduce it;
    - what an attacker could do with it.
 
+If you cannot use GitHub, email **security@lecternstudy.com** instead.
+
 Only the maintainers can see the report. We answer within 7 days, keep you informed while we fix it, and credit you in the release notes if you want.
 
 ## In scope
