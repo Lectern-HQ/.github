@@ -1,4 +1,4 @@
-<!-- Title: Conventional Commits format, it becomes the commit message on main. See COMMITS.md. -->
+<!-- Title: Conventional Commits format, it becomes the commit message on dev. See COMMITS.md. -->
 
 ## What
 
