@@ -56,6 +56,15 @@ When `dev` is stable (all checks pass, tried in use):
 2. Merge it with **Create a merge commit**, never squash. A squash would give `main` commits that `dev` does not have, and every later release would conflict.
 3. Tag the release on `main` (`v0.2.0`). `dev` is never deleted.
 
+## Technology stack
+
+The same everywhere; the full list is in [lectern's decision 3](https://github.com/Lectern-HQ/lectern/blob/dev/docs/decisions/0003-technology-stack.md).
+
+- **Interface (everything visual): React with TypeScript**, built by Vite. No other UI framework.
+- Desktop shell: Tauri 2. Jobs and running tools: Rust. The interface never runs programs or reads files.
+- Browser logins: the public Rust library `lectern-cookie-reader`.
+- Download, audio, transcription: yt-dlp, ffmpeg, whisper.cpp.
+
 ## Code quality
 
 Every pull request is reviewed against these rules.
@@ -81,7 +90,7 @@ Every pull request is reviewed against these rules.
 ### Tests
 - Every bug fix gets a test that fails before the fix.
 - Rust: unit tests in the same file, in a `#[cfg(test)] mod tests` block at the bottom (they can test private functions and are not part of the release). Tests of the public API go in the `tests/` folder. When a file's tests grow long, they move to their own file next to it.
-- TypeScript and Python: tests in a separate `tests/` folder.
+- TypeScript and Python: tests in a separate `tests/` folder. Interface components are tested with React Testing Library (Vitest).
 - Tests never use real cookies, real recordings or real transcripts. Use generated test data.
 
 ## Project rules
